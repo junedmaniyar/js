@@ -1,1 +1,137 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Center the content horizontally */
+        *{
+            font-size: 1rem;
+
+        }
+        #block_container {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+        }
+       
+
+        /* Display sun-blocks inline */
+        .sun-block {
+        
+            margin: 10px; /* Add spacing between sun-blocks */
+            border: 1px solid black;
+            width: 114px;
+        }
+
+        /* Style the banknote images */
+        .banknote {
+            width: 100px; /* Adjust the size as needed */
+            height: auto;
+        
+        }
+    </style>
+</head>
+<body>
+Enter your amount : <input oninput="result()" type="number" name="rupee" id="rupee">
+<br>
+<br>
+
+
+    <div id="block_container">
+        
+
+        <!-- Sun-block 2 with ₹50 banknote -->
+        <div class="sun-block" id="p01">
+            <h6>01 rupee coin</h6>
+            
+            <p id="n01">0</p>
+        </div>
+        <div class="sun-block" id="p50">
+            <h6>₹50 banknote</h6>
+            <p id="n50">0</p>
+     
+        </div>
+
+        
+        <div class="sun-block" id="p200">
+            <h6>₹200 banknote</h6>
+            <p id="n200">0</p>
+        </div>
+    
+        <!-- Sun-block 5 with ₹500 banknote -->
+        <div class="sun-block" id="p500">
+            <h6>₹500 banknote</h6>
+            <p id="n500">0</p>
+        </div>
+        <div class="sun-block" id="p1000">
+            <h6>₹1000 banknote</h6>
+            <p id="n1000">0</p>
+        </div>
+        <div class="sun-block" id="p2000">
+            <h6>₹2000 banknote</h6>
+            <p id="n2000" >0</p>
+    </div>
+
+</body>
+<script>
+    function result(){
+        let no=parseInt(document.getElementById('rupee').value);
+        let elements=document.getElementsByTagName("p");
+        elements[0].innerHTML=0;
+        let inpt=document.getElementById('rupee').value;
+        if(inpt!=='' || inpt==='') {
+        for(let i=0;i<elements.length;i++){
+            elements[i].innerHTML=0;
+        };
+
+    }
+       // console.log(elements.length);
+              
+
+        if(no>2000)
+        {let n2000=parseInt(no/2000);
+            no=no-(n2000*2000);
+            document.getElementById('n2000').innerHTML=n2000;
+        }
+        
+        if(no>1000)
+        {let n1000=parseInt(no/1000);
+            no=no-(n1000*1000);
+            document.getElementById('n1000').innerHTML=n1000;
+        }
+        if(no>500)
+        {let n500=parseInt(no/500);
+            no=no-(n500*500);
+            document.getElementById('n500').innerHTML=n500;
+        }
+        if(no>=200)
+        {
+           
+            let n200=parseInt(no/200);
+            no=no-(n200*200);
+            document.getElementById('n200').innerHTML=n200;
+        }
+        if(no>50)
+        {let n50=parseInt(no/50);
+            no=no-(n50*50);
+            document.getElementById('n50').innerHTML=n50;
+        }
+      if(no>0)
+        document.getElementById('n01').innerHTML=no;
+        let blocks=document.getElementsByClassName("sun-block");
+        // for(let i=0;i<6;i++){
+        //   if(elements[i]!=0)
+        //    blocks[i].style.color="magenta";
+        // }
+        if(elements[5].innerHTML==0){
+        blocks[5].
+    console.log("done");    
+    }
+     
+    }
+
+</script>
+</html>
